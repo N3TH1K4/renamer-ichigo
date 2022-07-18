@@ -99,7 +99,7 @@ async def rename_handler(bot: Client, event: Message):
         return
     media = event.video or event.audio or event.document
     if media and media.file_name:
-	reply_ = await event.reply_text(
+        reply_ = await event.reply_text(
             text=f"**Send Something**",
             quote=True
         )
