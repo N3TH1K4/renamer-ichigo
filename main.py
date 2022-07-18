@@ -123,10 +123,8 @@ async def rename_handler(bot: Client, event: Message):
         if os.path.exists(download_location):
             os.makedirs(download_location)
         try:
-            ask_: Message = await bot.listen(event.chat.id, timeout=300)
-            if ask_.text and (ask_.text.startswith("/") is False):
-                ascii_ = ''.join([i if (i in string.digits or i in string.ascii_letters or i == "_", "_") else "" for i in ask_.text.rsplit('_', 1)[0]])
-                prefix_ = await db.get_prefix(event.from_user.id)
+            lmao = "lol"
+            if "lol" in lmao:
                 new_file_name = f"{download_location}{newf}"
                 if len(new_file_name) > 255:
                     await reply_.edit("Sorry Unkil,\nFile Name length is more than 255 bytes!")
