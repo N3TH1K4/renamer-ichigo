@@ -113,7 +113,7 @@ async def rename_handler(bot: Client, event: Message):
             mod = "[Sub]"
         else:
             mod = None
-        download_location = f"{Config.DOWNLOAD_PATH}/{newf}/{str(time.time())}/"
+        download_location = f"{Config.DOWNLOAD_PATH}/{str({newf})}/{str(time.time())}/"
         if os.path.exists(download_location):
             os.makedirs(download_location)
         try:
