@@ -129,7 +129,6 @@ async def rename_handler(bot: Client, event: Message):
                 if len(new_file_name) > 255:
                     await reply_.edit("Sorry Unkil,\nFile Name length is more than 255 bytes!")
                     return
-                await ask_.delete(True)
                 await reply_.edit("<code>Downloading...</code>")
                 await asyncio.sleep(Config.SLEEP_TIME)
                 c_time = time.time()
@@ -201,8 +200,6 @@ async def rename_handler(bot: Client, event: Message):
                         await reply_.edit(f"Unable to Download File!\n**Error:** `{err}`")
                     except:
                         print(f"Unable to Download File for {str(event.from_user.id)} !!\n**Error:** `{err}`")
-            elif ask_.text and (ask_.text.startswith("/") is True):
-                await reply_.edit("Current Process Cancelled!")
         except TimeoutError:
             await reply_.edit("Sorry Unkil,\n5 Minutes Passed! I can't wait more. Send me the File Once Again to Rename.")
 
