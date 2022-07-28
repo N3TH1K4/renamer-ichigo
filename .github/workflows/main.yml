@@ -1,0 +1,17 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main # Changing the branch here would also work
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: "8eca367f-1cf8-4493-81d2-60ecd256ab69"
+          heroku_app_name: "ichigorename" #Must be unique in Heroku
+          heroku_email: "manu.weeb016@gmail.com"
